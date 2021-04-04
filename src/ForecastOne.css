@@ -6,9 +6,12 @@
 }
 
 .ForecastOne .Forecast-day {
-  font-size: 15px;
+  font-size: 14px;
 }
-
+.ForecastOne .Forecast-temperatures {
+  position: relative;
+  top: -18px;
+}
 .ForecastOne .Forecast-temperature-max {
   font-size: 12px;
 }
@@ -17,4 +20,20 @@
   font-size: 12px;
   opacity: 0.6;
   margin-left: 5px;
+}
+
+.ForecastOne .Forecast-icon {
+  position: relative;
+  top: -22px;
+  left: -40px;
+}
+
+.ForecastOne .weather-forecast-one {
+  position: relative;
+  left: 265px;
+}
+.ForecastOne .weather-forecast-two {
+  position: relative;
+  top: 100px;
+  left: -65px;
 }

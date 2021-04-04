@@ -1,34 +1,52 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./ForecastOne.css";
+import WeatherForecastDaily from "./WeatherForecastDaily";
 import axios from "axios";
 
 export default function ForecastOne(props){
-    function handleResponse(response){
-        console.log(response.data)
-    }
-    console.log('props', props)
-    let apiKey ="f0229aa4803b78f326fa1951e4c8d9a5";
-    let longitude = props.coordinates.lon;
-    let latitude = props.coordinates.lat;
-    let apiURL =`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&unit=imperial`
-    axios.get(apiURL).then(handleResponse);
-    return(
+    let [loaded, setLoaded]=useState(false);
+    let [forecast, setForecast] = useState(null);
+
+    useEffect (() => {
+        setLoaded(false);
+    }, [props.coordinates]);
     
+    function handleResponse(response){
+        setForecast(response.data.daily);
+        setLoaded (true);
+    }
+  
+    if (loaded){
+         return(
         <div className="ForecastOne">
             <div className="row">
-                <div className="col">
-                    <div className="Forecast-day">Sun</div>
-                    <div className="Forecast-icon">
-                             <img
-                                src={props.data.icon}
-                                />
-                    </div>
-                    <div className="Forecast-temperatures">
-                        <span className="Forecast-temperature-max">80°</span>
-                        <span className="Forecast-temperature-min">50°</span>
-                    </div>
-                </div>
+                {forecast.map(function(dailyForecastOne,index){
+                    if (index<3){
+                    return(
+                        <div className="col-2 weather-forecast-one" key={index}>
+                        <WeatherForecastDaily data={dailyForecastOne}/>
+                        </div>
+                );}
+                })}
+                {forecast.map(function(dailyForecastTwo,index){
+                    if (index >2 & index<6){
+                        return(
+                            <div className="col-2 weather-forecast-two" key={index}>
+                            <WeatherForecastDaily data={dailyForecastTwo}/>
+                            </div>
+                        )
+                    }
+                })}
             </div>
         </div>
     )
+    } else{
+        let apiKey ="f0229aa4803b78f326fa1951e4c8d9a5";
+        let longitude = props.coordinates.lon;
+        let latitude = props.coordinates.lat;
+        let apiURL =`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=imperial`
+        axios.get(apiURL).then(handleResponse);
+        return null;
+    }
+   
 }
