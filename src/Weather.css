@@ -1,0 +1,57 @@
+.Weather ul {
+  list-style: none;
+  padding: 0;
+  font-size: 15px;
+  color: rgb(94, 94, 94);
+}
+
+.Weather h1,
+ul {
+  position: relative;
+  left: 55px;
+  top: 40px;
+}
+
+.Weather span,
+h1 {
+  font-size: 30px;
+}
+
+.Weather input {
+  position: relative;
+  left: 310px;
+  top: 77px;
+}
+
+.Weather span {
+  top: -200px;
+}
+
+.Weather img {
+  position: relative;
+  left: 40px;
+  top: 15px;
+}
+
+.Weather .unit {
+  position: relative;
+  top: -64px;
+  left: 140px;
+  font-size: 18px;
+}
+
+.Weather .WeatherCondition {
+  margin-top: 15px;
+  top: -65px;
+}
+
+.Weather .temperature {
+  position: relative;
+  top: -55px;
+  left: 135px;
+  font-size: 30px;
+}
+.Weather .searchButton {
+  position: relative;
+  left: -35px;
+}

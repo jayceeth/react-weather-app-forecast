@@ -1,0 +1,14 @@
+.App footer {
+  font-size: 12px;
+}
+
+.App .container {
+  margin: 100px auto;
+  max-width: 665px;
+}
+
+.App .weatherAppContainer {
+  border: solid 1px rgb(195, 195, 195);
+  border-radius: 7px;
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+}
