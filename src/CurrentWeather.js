@@ -3,9 +3,11 @@ import FormatDate from "./FormatDate";
 import CurrentTemperature from "./CurrentTemperature";
 
 
+
 export default function CurrentWeather(props){
     return(
         <div className = "Weather">
+            <div className="CurrentWeather">
                     <h1>{props.data.city}</h1>
                         <ul>
                             <li><FormatDate date={props.data.date} /></li>
@@ -23,6 +25,7 @@ export default function CurrentWeather(props){
                             <li className="humidity">Humidity: {props.data.humidity}%</li>
                             <li className="wind">Wind: {props.data.wind} mph</li>
                         </ul>
-                </div>
+            </div>
+        </div>
     )
 }
