@@ -21,20 +21,10 @@ export default function ForecastOne(props) {
       <div className="ForecastOne">
         <div className="row">
           {forecast.map(function (dailyForecastOne, index) {
-            if (index < 3) {
+            if (index < 6) {
               return (
-                <div className="col-2 weather-forecast-one" key={index}>
+                <div className="col-4 weather-forecast-one" key={index}>
                   <WeatherForecastDaily data={dailyForecastOne} />
-                </div>
-              );
-            }
-            return <></>;
-          })}
-          {forecast.map(function (dailyForecastTwo, index) {
-            if ((index > 2) & (index < 6)) {
-              return (
-                <div className="col-2 weather-forecast-two" key={index}>
-                  <WeatherForecastDaily data={dailyForecastTwo} />
                 </div>
               );
             }

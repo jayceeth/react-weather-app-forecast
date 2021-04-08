@@ -1,7 +1,7 @@
 import React from "react";
 import FormatDate from "./FormatDate";
 import CurrentTemperature from "./CurrentTemperature";
-
+import "./CurrentWeather.css"
 
 
 export default function CurrentWeather(props){
@@ -13,12 +13,11 @@ export default function CurrentWeather(props){
                             <li><FormatDate date={props.data.date} /></li>
                             <li className="text-capitalize">{props.data.description}</li>
                         </ul>
-                            <div className="icon">
-                                <img
+                               <img
                                 src={props.data.icon}
                                 alt={props.data.description}
+                                width={100}
                                 />
-                            </div>
                             <CurrentTemperature imperial={props.data.temperature} className="Temperature"/>
                         <br />
                         <ul className="WeatherCondition">

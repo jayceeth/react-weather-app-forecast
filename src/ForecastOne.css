@@ -1,6 +1,6 @@
 .ForecastOne {
   position: relative;
-  left: 30px;
+  left: 500px;
   top: -250px;
   text-align: center;
 }
@@ -30,10 +30,5 @@
 
 .ForecastOne .weather-forecast-one {
   position: relative;
-  left: 265px;
-}
-.ForecastOne .weather-forecast-two {
-  position: relative;
-  top: 100px;
-  left: -65px;
+  left: -200px;
 }
